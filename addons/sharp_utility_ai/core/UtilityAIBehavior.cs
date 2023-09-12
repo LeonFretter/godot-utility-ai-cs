@@ -31,7 +31,7 @@ public partial class UtilityAIBehavior : Resource {
     private float Aggregate(Godot.Collections.Array<float> scores) {
         switch (Aggregation) {
             case AggregationType.PRODUCT:
-                return scores.Aggregate(.0f, (acc, x) => acc * x);
+                return scores.Aggregate(1.0f, (acc, x) => acc * x);
             case AggregationType.AVERAGE:
                 return scores.Aggregate(.0f, (acc, x) => acc + x) / scores.Count;
             case AggregationType.MAXIMUM:
