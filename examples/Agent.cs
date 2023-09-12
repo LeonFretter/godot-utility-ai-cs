@@ -22,18 +22,11 @@ public partial class Agent : Node {
     }
 
     public override void _Process(double delta) {
-        var bestOptionScore = .0f;
         string bestAction = "idle";
-
-        foreach (var option in Options) {
-            var score = option.Evaluate();
-            if(score > bestOptionScore) {
-                bestOptionScore = score;
-                // In this example, the action is a dict with a single key "name"
-                bestAction = option.Action["Name"].As<string>();
-            }
+        var bestOption = UtilityAI.ChooseHighest(Options);
+        if(bestOption != null) {
+            bestAction = bestOption.Action["Name"].As<string>();
         }
-
         _actionLabel.Text = bestAction;
     }
 
