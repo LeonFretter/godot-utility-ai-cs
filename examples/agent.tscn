@@ -32,7 +32,9 @@ Considerations = [SubResource("Resource_wca5j")]
 [sub_resource type="Resource" id="Resource_ksdpt"]
 script = ExtResource("3_f5cw4")
 Behavior = SubResource("Resource_0vius")
-Action = null
+Action = {
+"Name": "eat"
+}
 
 [sub_resource type="Curve" id="Curve_y2eab"]
 _data = [Vector2(0, 0), 0.0, 1.0, 1, 1, Vector2(0.1, 0.1), 1.0, 1.0, 1, 1, Vector2(0.2, 0.2), 1.0, 1.0, 1, 1, Vector2(0.3, 0.3), 1.0, 1.0, 1, 1, Vector2(0.4, 0.4), 1.0, 1.0, 1, 1, Vector2(0.5, 0.5), 1.0, 1.0, 1, 1, Vector2(0.6, 0.6), 1.0, 1.0, 1, 1, Vector2(0.7, 0.7), 1.0, 1.0, 1, 1, Vector2(0.8, 0.8), 1.0, 1.0, 1, 1, Vector2(0.9, 0.9), 1.0, 1.0, 1, 1, Vector2(1, 1), 1.0, 0.0, 1, 1]
@@ -59,7 +61,9 @@ Considerations = [SubResource("Resource_tkjiy")]
 [sub_resource type="Resource" id="Resource_40mfh"]
 script = ExtResource("3_f5cw4")
 Behavior = SubResource("Resource_1dsid")
-Action = null
+Action = {
+"Name": "drink"
+}
 
 [sub_resource type="Curve" id="Curve_w8x8l"]
 _data = [Vector2(0, 0), 0.0, 1.0, 1, 1, Vector2(0.1, 0.1), 1.0, 1.0, 1, 1, Vector2(0.2, 0.2), 1.0, 1.0, 1, 1, Vector2(0.3, 0.3), 1.0, 1.0, 1, 1, Vector2(0.4, 0.4), 1.0, 1.0, 1, 1, Vector2(0.5, 0.5), 1.0, 1.0, 1, 1, Vector2(0.6, 0.6), 1.0, 1.0, 1, 1, Vector2(0.7, 0.7), 1.0, 1.0, 1, 1, Vector2(0.8, 0.8), 1.0, 1.0, 1, 1, Vector2(0.9, 0.9), 1.0, 1.0, 1, 1, Vector2(1, 1), 1.0, 0.0, 1, 1]
@@ -86,7 +90,9 @@ Considerations = [SubResource("Resource_ointj")]
 [sub_resource type="Resource" id="Resource_8h52a"]
 script = ExtResource("3_f5cw4")
 Behavior = SubResource("Resource_sqy1d")
-Action = null
+Action = {
+"Name": "work"
+}
 
 [sub_resource type="Resource" id="Resource_vp2p2"]
 script = ExtResource("6_dbcfc")

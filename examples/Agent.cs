@@ -26,8 +26,8 @@ public partial class Agent : Node {
             var score = option.Evaluate();
             if(score > bestOptionScore) {
                 bestOptionScore = score;
-                // In this example, the behavior-name is used as action-name.
-                bestAction = option.Behavior.Name;
+                // In this example, the action is a dict with a single key "name"
+                bestAction = option.Action["Name"].As<string>();
             }
         }
 

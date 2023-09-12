@@ -10,7 +10,7 @@ public partial class UtilityAIOption : Resource {
     public UtilityAIContext Context;
 
     [Export]
-    public Variant Action;
+    public Godot.Collections.Dictionary Action;
 
     public float Evaluate() {
         return Behavior.Evaluate(Context);
