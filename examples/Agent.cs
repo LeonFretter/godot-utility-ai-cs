@@ -7,7 +7,7 @@ public partial class Agent : Node {
     public Godot.Collections.Array<UtilityAIOption> Options;
 
     [Export]
-    public UtilityAIContext Context;
+    public Godot.Collections.Dictionary Context = new();
 
     private Label _actionLabel;
 
@@ -16,6 +16,9 @@ public partial class Agent : Node {
         foreach (var option in Options) {
             option.Context = Context;
         }
+        Context["nutrition"] = .5f;
+        Context["hydration"] = .5f;
+        Context["energy"] = .5f;
     }
 
     public override void _Process(double delta) {
@@ -35,14 +38,14 @@ public partial class Agent : Node {
     }
 
     public void SetNutrition(float value) {
-        Context.Set("nutrition", value / 100f);
+        Context["nutrition"] = value / 100f;
     }
 
     public void SetHydration(float value) {
-        Context.Set("hydration", value / 100f);
+        Context["hydration"] = value / 100f;
     }
 
     public void SetEnergy(float value) {
-        Context.Set("energy", value / 100f);
+        Context["energy"] = value / 100f;
     }
 }

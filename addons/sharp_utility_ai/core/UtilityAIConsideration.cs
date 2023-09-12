@@ -12,8 +12,8 @@ public partial class UtilityAIConsideration : Resource {
     [Export]
     public UtilityAIResponseCurve ResponseCurve;
 
-    public float Evaluate(UtilityAIContext context) {
-        float x = context.Get(InputKey);
+    public float Evaluate(Godot.Collections.Dictionary context) {
+        float x = context[InputKey].As<float>();
         if (Invert) {
             x = 1 - x;
         }

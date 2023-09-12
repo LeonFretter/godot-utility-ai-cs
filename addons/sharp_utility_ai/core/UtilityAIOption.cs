@@ -7,7 +7,7 @@ public partial class UtilityAIOption : Resource {
     public UtilityAIBehavior Behavior;
 
     [Export]
-    public UtilityAIContext Context;
+    public Godot.Collections.Dictionary Context;
 
     [Export]
     public Godot.Collections.Dictionary Action;

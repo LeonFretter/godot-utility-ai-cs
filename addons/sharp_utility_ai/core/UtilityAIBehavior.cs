@@ -20,7 +20,7 @@ public partial class UtilityAIBehavior : Resource {
     [Export]
     public Godot.Collections.Array<UtilityAIConsideration> Considerations = new ();
 
-    public float Evaluate(UtilityAIContext context) {
+    public float Evaluate(Godot.Collections.Dictionary context) {
         var scores = new Godot.Collections.Array<float>();
         foreach (var consideration in Considerations) {
             scores.Add(consideration.Evaluate(context));
