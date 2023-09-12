@@ -1,0 +1,38 @@
+[gd_scene load_steps=10 format=3 uid="uid://t3musw8hb716"]
+
+[ext_resource type="Script" path="res://examples/Agent.cs" id="1_li4ku"]
+[ext_resource type="Script" path="res://addons/sharp_utility_ai/core/UtilityAIBehavior.cs" id="2_js6ow"]
+[ext_resource type="Script" path="res://addons/sharp_utility_ai/core/UtilityAIResponseCurve.cs" id="2_yktrn"]
+[ext_resource type="Script" path="res://addons/sharp_utility_ai/core/UtilityAIOption.cs" id="3_f5cw4"]
+[ext_resource type="Script" path="res://addons/sharp_utility_ai/core/UtilityAIConsideration.cs" id="3_pvw8b"]
+
+[sub_resource type="Curve" id="Curve_pe4bx"]
+_data = [Vector2(0, 0), 0.0, 1.0, 1, 1, Vector2(0.1, 0.1), 1.0, 1.0, 1, 1, Vector2(0.2, 0.2), 1.0, 1.0, 1, 1, Vector2(0.3, 0.3), 1.0, 1.0, 1, 1, Vector2(0.4, 0.4), 1.0, 1.0, 1, 1, Vector2(0.5, 0.5), 1.0, 1.0, 1, 1, Vector2(0.6, 0.6), 1.0, 1.0, 1, 1, Vector2(0.7, 0.7), 1.0, 1.0, 1, 1, Vector2(0.8, 0.8), 1.0, 1.0, 1, 1, Vector2(0.9, 0.9), 1.0, 1.0, 1, 1, Vector2(1, 1), 1.0, 0.0, 1, 1]
+point_count = 11
+script = ExtResource("2_yktrn")
+Type = 1
+Exponent = 1
+Slope = 1
+XShift = 0.0
+YShift = 0.0
+
+[sub_resource type="Resource" id="Resource_wca5j"]
+script = ExtResource("3_pvw8b")
+InputKey = ""
+Invert = false
+ResponseCurve = SubResource("Curve_pe4bx")
+
+[sub_resource type="Resource" id="Resource_0vius"]
+script = ExtResource("2_js6ow")
+Name = ""
+Aggregation = 0
+Considerations = [SubResource("Resource_wca5j")]
+
+[sub_resource type="Resource" id="Resource_ksdpt"]
+script = ExtResource("3_f5cw4")
+Behavior = SubResource("Resource_0vius")
+Action = null
+
+[node name="Agent" type="Node"]
+script = ExtResource("1_li4ku")
+Options = [SubResource("Resource_ksdpt")]
