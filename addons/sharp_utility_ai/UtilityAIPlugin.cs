@@ -3,7 +3,7 @@ using Godot;
 using System;
 
 [Tool]
-public partial class sharp_utility_ai : EditorPlugin
+public partial class UtilityAIPlugin : EditorPlugin
 {
 	public override void _EnterTree()
 	{
