@@ -1,10 +1,16 @@
-[gd_scene load_steps=18 format=3 uid="uid://t3musw8hb716"]
+[gd_scene load_steps=22 format=3 uid="uid://t3musw8hb716"]
 
 [ext_resource type="Script" path="res://examples/Agent.cs" id="1_li4ku"]
 [ext_resource type="Script" path="res://addons/sharp_utility_ai/core/UtilityAIBehavior.cs" id="2_js6ow"]
 [ext_resource type="Script" path="res://addons/sharp_utility_ai/core/UtilityAIResponseCurve.cs" id="2_yktrn"]
 [ext_resource type="Script" path="res://addons/sharp_utility_ai/core/UtilityAIOption.cs" id="3_f5cw4"]
 [ext_resource type="Script" path="res://addons/sharp_utility_ai/core/UtilityAIConsideration.cs" id="3_pvw8b"]
+[ext_resource type="Script" path="res://addons/sharp_utility_ai/core/UtilityAIAction.cs" id="6_u13kk"]
+
+[sub_resource type="Resource" id="Resource_75g7b"]
+script = ExtResource("6_u13kk")
+ActionName = "eat"
+Params = {}
 
 [sub_resource type="Curve" id="Curve_pe4bx"]
 _data = [Vector2(0, 0), 0.0, 1.0, 1, 1, Vector2(0.1, 0.1), 1.0, 1.0, 1, 1, Vector2(0.2, 0.2), 1.0, 1.0, 1, 1, Vector2(0.3, 0.3), 1.0, 1.0, 1, 1, Vector2(0.4, 0.4), 1.0, 1.0, 1, 1, Vector2(0.5, 0.5), 1.0, 1.0, 1, 1, Vector2(0.6, 0.6), 1.0, 1.0, 1, 1, Vector2(0.7, 0.7), 1.0, 1.0, 1, 1, Vector2(0.8, 0.8), 1.0, 1.0, 1, 1, Vector2(0.9, 0.9), 1.0, 1.0, 1, 1, Vector2(1, 1), 1.0, 0.0, 1, 1]
@@ -32,9 +38,12 @@ Considerations = [SubResource("Resource_wca5j")]
 script = ExtResource("3_f5cw4")
 Behavior = SubResource("Resource_0vius")
 Context = {}
-Action = {
-"Name": "eat"
-}
+Action = SubResource("Resource_75g7b")
+
+[sub_resource type="Resource" id="Resource_6ao1l"]
+script = ExtResource("6_u13kk")
+ActionName = "drink"
+Params = {}
 
 [sub_resource type="Curve" id="Curve_y2eab"]
 _data = [Vector2(0, 0), 0.0, 1.0, 1, 1, Vector2(0.1, 0.1), 1.0, 1.0, 1, 1, Vector2(0.2, 0.2), 1.0, 1.0, 1, 1, Vector2(0.3, 0.3), 1.0, 1.0, 1, 1, Vector2(0.4, 0.4), 1.0, 1.0, 1, 1, Vector2(0.5, 0.5), 1.0, 1.0, 1, 1, Vector2(0.6, 0.6), 1.0, 1.0, 1, 1, Vector2(0.7, 0.7), 1.0, 1.0, 1, 1, Vector2(0.8, 0.8), 1.0, 1.0, 1, 1, Vector2(0.9, 0.9), 1.0, 1.0, 1, 1, Vector2(1, 1), 1.0, 0.0, 1, 1]
@@ -62,9 +71,12 @@ Considerations = [SubResource("Resource_tkjiy")]
 script = ExtResource("3_f5cw4")
 Behavior = SubResource("Resource_1dsid")
 Context = {}
-Action = {
-"Name": "drink"
-}
+Action = SubResource("Resource_6ao1l")
+
+[sub_resource type="Resource" id="Resource_np8cq"]
+script = ExtResource("6_u13kk")
+ActionName = "work"
+Params = {}
 
 [sub_resource type="Curve" id="Curve_w8x8l"]
 _data = [Vector2(0, 0), 0.0, 1.0, 1, 1, Vector2(0.1, 0.1), 1.0, 1.0, 1, 1, Vector2(0.2, 0.2), 1.0, 1.0, 1, 1, Vector2(0.3, 0.3), 1.0, 1.0, 1, 1, Vector2(0.4, 0.4), 1.0, 1.0, 1, 1, Vector2(0.5, 0.5), 1.0, 1.0, 1, 1, Vector2(0.6, 0.6), 1.0, 1.0, 1, 1, Vector2(0.7, 0.7), 1.0, 1.0, 1, 1, Vector2(0.8, 0.8), 1.0, 1.0, 1, 1, Vector2(0.9, 0.9), 1.0, 1.0, 1, 1, Vector2(1, 1), 1.0, 0.0, 1, 1]
@@ -92,9 +104,7 @@ Considerations = [SubResource("Resource_ointj")]
 script = ExtResource("3_f5cw4")
 Behavior = SubResource("Resource_sqy1d")
 Context = {}
-Action = {
-"Name": "work"
-}
+Action = SubResource("Resource_np8cq")
 
 [node name="Agent" type="Node"]
 script = ExtResource("1_li4ku")

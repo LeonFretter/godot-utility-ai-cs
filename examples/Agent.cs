@@ -25,7 +25,7 @@ public partial class Agent : Node {
         string bestAction = "idle";
         var bestOption = UtilityAI.ChooseHighest(Options);
         if(bestOption != null) {
-            bestAction = bestOption.Action["Name"].As<string>();
+            bestAction = bestOption.Action.ActionName;
         }
         _actionLabel.Text = bestAction;
     }
